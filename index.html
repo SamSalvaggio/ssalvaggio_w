@@ -9,21 +9,32 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background: #fff;
       color: #111;
     }
 
     body {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       text-align: center;
     }
 
-    main {
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
       max-width: 600px;
       padding: 40px;
+    }
+
+    footer {
+      margin: 20px 0;
+      font-size: 0.9em;
     }
 
     h1 {
@@ -39,18 +50,13 @@
       color: inherit;
       text-decoration: underline;
     }
-
-    footer {
-      margin-top: 3em;
-      font-size: 0.9em;
-    }
   </style>
 </head>
 <body>
-  <main>
+  <div class="container">
     <h1>Samuel Salvaggio</h1>
     <p><a href="mailto:contact@salvaggio.me">contact@salvaggio.me</a> / <a href="https://www.linkedin.com/in/samuelsalvaggio/">LinkedIn</a></p>
-    <footer>&copy; 2025 Samuel Salvaggio</footer>
-  </main>
+  </div>
+  <footer>&copy; 2025 Samuel Salvaggio</footer>
 </body>
 </html>
