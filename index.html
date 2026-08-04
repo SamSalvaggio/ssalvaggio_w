@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Samuel Salvaggio</title>
-  <meta name="description" content="Samuel Salvaggio — endpoint strategy and clinical trial design: which outcomes to measure, how to prioritize them, and how to demonstrate a treatment's value to patients, clinicians and regulators.">
+  <meta name="description" content="Samuel Salvaggio — endpoint strategy and clinical trial design: which outcomes to choose, how to prioritize them, and how to demonstrate a treatment's value to patients, clinicians and regulators.">
   <link rel="canonical" href="https://www.salvaggio.me/">
 
   <!-- Link preview (LinkedIn, Slack, iMessage) -->
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://www.salvaggio.me/">
   <meta property="og:title" content="Samuel Salvaggio">
-  <meta property="og:description" content="Endpoint strategy and clinical trial design: which outcomes to measure, how to prioritize them, and how to demonstrate a treatment's value to patients, clinicians and regulators.">
+  <meta property="og:description" content="Endpoint strategy and clinical trial design: which outcomes to choose, how to prioritize them, and how to demonstrate a treatment's value to patients, clinicians and regulators.">
   <meta property="og:image" content="https://www.salvaggio.me/preview.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -84,6 +84,14 @@
     .bio {
       margin: 0 0 2rem;
       max-width: 32rem;
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    /* Justification produces ugly gaps on narrow screens */
+    @media (max-width: 480px) {
+      .bio { text-align: left; }
     }
 
     .work-label {
@@ -166,11 +174,11 @@
     </p>
 
     <p class="bio">
-      I work on how clinical trials measure what matters: which outcomes to measure, how to
+      I work on how clinical trials measure what matters: which outcomes to choose, how to
       prioritize them, and how to demonstrate a treatment&rsquo;s value in terms patients,
-      clinicians and regulators all recognize. Experienced in endpoint strategy, trial design and clinical
-      development plans from Phase I to III, across oncology, rare disease and infectious
-      disease.
+      clinicians and regulators all recognize. I&rsquo;ve worked across endpoint strategy, trial
+      design and clinical development plans from Phase I to III, in oncology, rare disease and
+      infectious disease.
     </p>
 
     <p class="work-label">Selected work</p>
@@ -187,6 +195,10 @@
       <li>
         <a href="https://doi.org/10.1016/j.jacc.2023.06.047">Generalized pairwise comparisons to assess treatment effects</a>
         <span class="venue">Journal of the American College of Cardiology, 2023</span>
+      </li>
+      <li>
+        <a href="https://doi.org/10.1186/s13023-023-02943-8">Generalized pairwise comparisons of prioritized outcomes are a powerful and patient-centric analysis of multi-domain scores</a>
+        <span class="venue">Orphanet Journal of Rare Diseases, 2023</span>
       </li>
       <li>
         <a href="https://doi.org/10.1201/9781003390855-20">Regulatory considerations for GPC analyses</a>
@@ -216,10 +228,8 @@
       "Patient-centric endpoints",
       "Benefit-risk assessment",
       "Generalized pairwise comparisons",
-      "Net Treatment Benefit",
       "Win ratio",
-      "Biostatistics",
-      "Patient-Centered Outcomes Research"
+      "Biostatistics"
     ],
     "sameAs": [
       "https://www.linkedin.com/in/samuelsalvaggio/",
