@@ -2,114 +2,231 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Samuel Salvaggio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Samuel Salvaggio – Senior Trial Design Lead @ One2Treat | Lecturer @ ULB School of Public Health">
-  
+
+  <title>Samuel Salvaggio</title>
+  <meta name="description" content="Samuel Salvaggio — endpoint strategy and clinical trial design: which outcomes to measure, how to prioritize them, and how to demonstrate a treatment's value to patients, clinicians and regulators.">
+  <link rel="canonical" href="https://www.salvaggio.me/">
+
+  <!-- Link preview (LinkedIn, Slack, iMessage) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://www.salvaggio.me/">
+  <meta property="og:title" content="Samuel Salvaggio">
+  <meta property="og:description" content="Endpoint strategy and clinical trial design: which outcomes to measure, how to prioritize them, and how to demonstrate a treatment's value to patients, clinicians and regulators.">
+  <meta property="og:image" content="https://www.salvaggio.me/preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon, inline so there is no extra file to host -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23111'/><text x='50' y='72' font-family='Georgia,serif' font-size='64' fill='%23fff' text-anchor='middle'>S</text></svg>">
+
   <link rel="preload" as="image" href="picture.jpg">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* --- Reset and Base Styles --- */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Montserrat', sans-serif;
-      background: #fff;
-      color: #111;
-      font-size: 16px;
+    :root {
+      --ink: #111;
+      --muted: #5a5a5a;
+      --rule: #d8d8d8;
+      --measure: 34rem;
     }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
 
     body {
+      margin: 0;
+      min-height: 100dvh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      background: #fff;
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* --- Main Container --- */
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      flex: 1;
-      max-width: 600px;
-      padding: 32px;
-      /* Optional: Adds a subtle fade-in effect on load */
-      animation: fadeIn 0.8s ease-in;
+    .card {
+      width: 100%;
+      max-width: var(--measure);
+      animation: rise 0.6s ease-out both;
     }
 
-    /* --- Profile Picture Styles --- */
     .profile-pic {
-      /* 1. Set a fixed size (must be a square) */
-      width: 150px;
-      height: 150px;
-      
-      /* 2. Turn the square into a circle */
+      width: 132px;
+      height: 132px;
       border-radius: 50%;
-      
-      /* 3. Ensure the image fills the circle without stretching, 
-         cropping centrally if necessary */
       object-fit: cover;
       object-position: center;
-      
-      /* Spacing below the image */
-      margin-bottom: 24px;
-      
-      /* Optional: Adds a subtle border to define edges against white background */
-      border: 3px solid #f0f0f0;
-      
-      /* Ensure high quality rendering */
-      image-rendering: -webkit-optimize-contrast;
+      display: block;
+      margin: 0 auto 1.75rem;
+      background: #f0f0f0;
     }
 
-    /* --- Typography & Links --- */
     h1 {
-      font-size: 1.8em; /* Slightly larger to balance with the photo */
-      font-weight: 700;
-      margin: 0 0 0.5em 0;
+      margin: 0 0 0.35rem;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
     }
 
-    .links-container {
-      font-weight: 500;
-      line-height: 1.5;
+    .affiliation {
+      margin: 0 0 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .bio {
+      margin: 0 0 2rem;
+      max-width: 32rem;
+    }
+
+    .work-label {
+      margin: 0 0 0.85rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--muted);
+    }
+
+    .work {
+      margin: 0 0 2rem;
+      padding: 0;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .work li { margin-bottom: 1rem; }
+    .work li:last-child { margin-bottom: 0; }
+
+    .work a { line-height: 1.45; }
+
+    .venue {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .links {
       margin: 0;
-      color: #555; /* Slightly softer color for the links */
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .links .sep {
+      padding: 0 0.4rem;
+      color: var(--rule);
     }
 
     a {
-      color: inherit;
+      color: var(--ink);
       text-decoration: none;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 2px;
-      transition: all 0.2s ease; /* Smooth transition on hover */
-    }
-    a:hover,
-    a:focus {
-      color: #000;
-      border-bottom-color: #000;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1px;
+      transition: border-color 0.2s ease;
     }
 
-    /* Simple fade-in animation definition */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
+    a:hover,
+    a:focus-visible { border-bottom-color: var(--ink); }
+
+    a:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { animation: none; }
+      a { transition: none; }
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <img src="picture.jpg" alt="Samuel Salvaggio" class="profile-pic" width="150" height="150">
-    
-    <h1>Samuel Salvaggio</h1>
-    <p class="links-container">
-      <a href="mailto:contact@salvaggio.me">e-mail</a> /
-      <a href="https://www.linkedin.com/in/samuelsalvaggio/">linkedIn</a> /
-      <a href="https://www.salvaggio.me/publications.pdf">publications</a>
+  <main class="card">
+    <img src="picture.jpg" alt="Samuel Salvaggio" class="profile-pic" width="132" height="132">
+
+    <h1>Samuel Salvaggio, PhD</h1>
+
+    <p class="affiliation">
+      Senior Trial Design Lead, One2Treat &middot; Lecturer in biostatistics, ULB School of Public Health
+    </p>
+
+    <p class="bio">
+      I work on how clinical trials measure what matters: which outcomes to measure, how to
+      prioritize them, and how to demonstrate a treatment&rsquo;s value in terms patients,
+      clinicians and regulators all recognize. Experienced in endpoint strategy, trial design and clinical
+      development plans from Phase I to III, across oncology, rare disease and infectious
+      disease.
+    </p>
+
+    <p class="work-label">Selected work</p>
+
+    <ul class="work">
+      <li>
+        <a href="https://doi.org/10.1001/jamanetworkopen.2025.2484">Generalized pairwise comparisons to support shared decision-making in the CODA trial</a>
+        <span class="venue">JAMA Network Open, 2025</span>
+      </li>
+      <li>
+        <a href="https://doi.org/10.1177/17407745231206465">Design of a clinical trial using generalized pairwise comparisons to test a less intensive treatment regimen</a>
+        <span class="venue">Clinical Trials, 2024</span>
+      </li>
+      <li>
+        <a href="https://doi.org/10.1016/j.jacc.2023.06.047">Generalized pairwise comparisons to assess treatment effects</a>
+        <span class="venue">Journal of the American College of Cardiology, 2023</span>
+      </li>
+      <li>
+        <a href="https://doi.org/10.1201/9781003390855-20">Regulatory considerations for GPC analyses</a>
+        <span class="venue">Handbook of Generalized Pairwise Comparisons, Chapman &amp; Hall/CRC, 2025</span>
+      </li>
+    </ul>
+
+    <p class="links">
+      <a href="mailto:contact@salvaggio.me">e-mail</a><span class="sep">/</span><a href="https://www.linkedin.com/in/samuelsalvaggio/">LinkedIn</a><span class="sep">/</span><a href="https://www.salvaggio.me/publications.pdf">publications</a>
     </p>
   </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Samuel Salvaggio",
+    "honorificSuffix": "PhD",
+    "url": "https://www.salvaggio.me/",
+    "image": "https://www.salvaggio.me/picture.jpg",
+    "email": "contact@salvaggio.me",
+    "jobTitle": "Senior Trial Design Lead",
+    "worksFor": { "@type": "Organization", "name": "One2Treat" },
+    "affiliation": { "@type": "Organization", "name": "Université libre de Bruxelles, School of Public Health" },
+    "knowsAbout": [
+      "Clinical trial design",
+      "Patient-centric endpoints",
+      "Benefit-risk assessment",
+      "Generalized pairwise comparisons",
+      "Net Treatment Benefit",
+      "Win ratio",
+      "Biostatistics",
+      "Patient-Centered Outcomes Research"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/samuelsalvaggio/",
+      "https://orcid.org/0000-0002-5714-107X",
+      "https://scholar.google.com/citations?user=iVCYe1EAAAAJ"
+    ]
+  }
+  </script>
 </body>
 </html>
